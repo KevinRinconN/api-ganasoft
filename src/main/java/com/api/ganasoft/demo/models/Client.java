@@ -1,4 +1,4 @@
-package com.api.ganasoft.demo.entity;
+package com.api.ganasoft.demo.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,13 +10,14 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "Client")
+@Table(name = "client")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Client implements Serializable{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String email;

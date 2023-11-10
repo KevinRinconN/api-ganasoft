@@ -1,4 +1,4 @@
-package com.api.ganasoft.demo.entity;
+package com.api.ganasoft.demo.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,24 +11,22 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "Sele")
+@Table(name = "Work")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Sele implements Serializable{
-
+public class Work implements Serializable{
+    
     @Id
     private Integer id;
     private Date date;
-    private Double purchaseValue;
-
-
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "sele")
-    private List<Cattle> cattle;
-
+    private String observations;
 
     @ManyToOne
-    @JoinColumn(name = "idClient")
-    private Client client;
+    @JoinColumn(name = "idTreatment")
+    private Treatment treatment;
+
+    @ManyToMany(mappedBy = "work")
+    private List<Cattle> cattle;
 
 }

@@ -1,4 +1,4 @@
-package com.api.ganasoft.demo.entity;
+package com.api.ganasoft.demo.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
